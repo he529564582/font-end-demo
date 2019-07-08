@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目练习</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: unset;
+        }
+        a:visited{
+            color: unset;
+        }
+        a:hover{
+            color: unset;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        header{
+            width: 600px;
+            margin: 0 auto;
+        }
+        header:after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        header>span{
+            width: 50%;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            padding: 15px;
+        }
+        header>span.active{
+            background-color: #f1f1f1;
+        }
+        main{
+            margin: 0 auto;
+            width: 600px;
+            /*background-color: #fdebcb;*/
+
+        }
+        main>ul>li{
+            margin: 5px 0;
+            padding: 10px;
+            transition: all .3s;
+        }
+        /*main>ul>li:nth-child(odd){*/
+            /*background-color: #f1f1f1;*/
+        /*}*/
+        main>ul>li:hover{
+            color: #849fb8;
+            background-color: #f1f1f1;
+        }
+        main>ul{
+            display: none;
+        }
+        main>ul.active{
+            display: block;
+        }
+        main>ul.static>li{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+
+<body>
+
+        <header>
+            <span id="span1" class="active">CSS常见效果</span>
+            <span id="span2" >静态页面</span>
+        </header>
+        <main>
+            <ul class="cssContent active">
+                <li><a href="./css常见效果/轮播.html" target="_blank">轮播</a></li>
+                <li><a href="./css常见效果/木桶布局.html" target="_blank">木桶布局</a></li>
+                <li><a href="./css常见效果/瀑布流布局.html" target="_blank">瀑布流布局</a></li>
+                <li><a href="./css常见效果/图片懒加载.html" target="_blank">图片懒加载</a></li>
+                <li><a href="./css常见效果/涟漪按钮.html" target="_blank">涟漪按钮</a></li>
+                <li><a href="./css常见效果/头像选择框.html" target="_blank">头像选择框</a></li>
+                <li><a href="./css常见效果/导航栏.html" target="_blank">导航栏</a></li>
+                <li><a href="./css常见效果/多种垂直居中.html" target="_blank">多种垂直居中</a></li>
+                <li><a href="./css常见效果/文字两端对齐.html" target="_blank">文字两端对齐</a></li>
+                <li><a href="./css常见效果/tab_switch.html" target="_blank">TAB切换</a></li>
+                <li><a href="./css常见效果/伪元素气泡提示框.html" target="_blank">伪元素气泡提示框</a></li>
+                <li><a href="./css常见效果/文本溢出.html" target="_blank">文本溢出</a></li>
+                <li><a href="./css常见效果/文字两端对齐.html" target="_blank">文字两端对齐</a></li>
+            </ul>
+            <ul class="static">
+                <li><a href="./静态页面/仿百度首页/baidu_mock.html" target="_blank">仿百度首页</a></li>
+                <li><a href="./静态页面/仿企业站首页/index.html" target="_blank">仿idol网站首页</a></li>
+                <li><a href="./静态页面/平均布局/jq增删平均布局.html" target="_blank">jquery增删平均布局</a></li>
+                <li><a href="./静态页面/登录注册页/翻转登录注册对话框.html" target="_blank">3d登录注册对话框</a></li>
+            </ul>
+        </main>
+
+        <script>
+
+            var cssSection = document.querySelector('.cssContent');
+            var staticSection = document.querySelector('.static');
+
+            var span1 =  document.querySelector('#span1');
+            var span2 = document.querySelector('#span2');
+            span1.addEventListener('click',function () {
+                span1.classList.add('active');
+                span2.classList.remove('active');
+                cssSection.classList.add('active');
+                staticSection.classList.remove('active');
+            })
+            span2.addEventListener('click',function () {
+                span1.classList.remove('active');
+                span2.classList.add('active');
+                staticSection.classList.add('active');
+                cssSection.classList.remove('active');
+            })
+        </script>
+
+</body>
+</html>
