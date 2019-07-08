@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多种垂直居中</title>
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .warpper {
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+        }
+
+        .content {
+            width: 100px;
+            height: 100px;
+            background: palevioletred;
+        }
+
+        .warpper1 {
+
+            position: relative
+        }
+
+
+
+        .content1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .warpper2 {
+
+            position: relative;
+
+        }
+
+        .content2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .warpper3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .content3 {}
+
+        .warpper4 {
+            position: relative;
+
+
+        }
+
+        .content4 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+
+        .warpper5 {
+
+            text-align: center;
+        }
+        .warpper5 .before {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .warpper5 .after {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .content5 {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>1.position加margin </h3>
+        <div class="warpper warpper1">
+            <div class="content content1"></div>
+        </div>
+    </div>
+    <div>
+        <h3>2.绝对定位+transform: translate(-50%,-50%);</h3>
+        <div class="warpper warpper2">
+            <div class="content content2"></div>
+        </div>
+    </div>
+    <div>
+        <h3>3.flex</h3>
+        <div class="warpper warpper3">
+            <div class="content content3"></div>
+        </div>
+    </div>
+    <div>
+        <h3>4.绝对定位+负边距</h3>
+        <div class="warpper warpper4">
+            <div class="content content4"></div>
+        </div>
+    </div>
+</body>
+<div>
+    <h3>100% 高度的 afrer before 加上 inline block</h3>
+    <div class="warpper warpper5">
+        <span class="before"></span>
+        <div class="content content5"></div>
+        <span class="after"></span>
+    </div>
+</div>
+
+</html>
